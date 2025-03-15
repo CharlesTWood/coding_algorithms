@@ -6,7 +6,7 @@ def find_impacted_downstream_nodes(nodes, edges, impacted_node):
 
     for i, node in enumerate(nodes):
         if node == impacted_node:
-            impacted_nodes.append(edges[i] if edges[i] != 0 else node)
+            impacted_nodes.append(edges[i] if edges[i] != 0 else None)
             impacted_nodes.extend(find_impacted_downstream_nodes(nodes, edges, edges[i]))
     return impacted_nodes
 
